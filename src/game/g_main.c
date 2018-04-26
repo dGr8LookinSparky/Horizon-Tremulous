@@ -23,8 +23,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "g_local.h"
 
-#define QVM_NAME       "Ambush"
-#define QVM_VERSIONNUM      "3.0"
+#define QVM_NAME       "Horizon"
+#define QVM_VERSIONNUM      "0.1"
 
 level_locals_t  level;
 

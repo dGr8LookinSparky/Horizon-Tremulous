@@ -385,7 +385,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define GRENADE_SHRAPNEL_DAMAGE     100
 
 #define SHOTGUN_PRICE               150 //150
-#define SHOTGUN_SHELLS              8
+#define SHOTGUN_SHELLS              8 //8
 #define SHOTGUN_PELLETS             8 //used to sync server and client side
 #define SHOTGUN_MAXCLIPS            3
 #define SHOTGUN_REPEAT              1000
@@ -477,7 +477,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #define BATTPACK_PRICE              100 //100
 #define BATTPACK_MODIFIER           1.5f //modifier for extra energy storage available
 
-#define JETPACK_PRICE               120
+#define JETPACK_PRICE               9999 //120
 #define JETPACK_FLOAT_SPEED         128.0f //up movement speed
 #define JETPACK_SINK_SPEED          192.0f //down movement speed
 #define JETPACK_DISABLE_TIME        1000 //time to disable the jetpack when player damaged
