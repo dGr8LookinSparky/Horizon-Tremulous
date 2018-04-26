@@ -2,8 +2,7 @@ build/release-mingw32-x86/client
 build/release-mingw32-x86/clientsmp
 build/release-mingw32-x86/ded
 
-build/release-mingw32-x86/client/cgame
-build/release-mingw32-x86/client/game
-build/release-mingw32-x86/client/qcommon
-build/release-mingw32-x86/client/ui
+build/release-mingw32-x86/base/cgame
 build/release-mingw32-x86/base/game
+build/release-mingw32-x86/base/qcommon
+build/release-mingw32-x86/base/ui
