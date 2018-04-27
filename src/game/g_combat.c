@@ -1146,10 +1146,10 @@ void G_Damage( gentity_t *targ, gentity_t *inflictor, gentity_t *attacker,
       targ->use( targ, inflictor, attacker );
     return;
   }
-  //if(BG_InventoryContainsUpgrade( UP_BATTLESUIT, targ->client->ps.stats ) || targ->boss == qtrue)
-  //damage = damage / 3;
+  if(BG_InventoryContainsUpgrade( UP_BATTLESUIT, targ->client->ps.stats ) || targ->boss == qtrue)
+  damage = damage / 3;
 
-  /* if(attacker->client)
+  if(attacker->client)
   {
     if(g_ambush.integer > 0 && attacker->client->pers.teamSelection == PTE_HUMANS)
       damage += (g_ambush_upgrade.integer * damage) / 4;
@@ -1163,7 +1163,7 @@ void G_Damage( gentity_t *targ, gentity_t *inflictor, gentity_t *attacker,
     {
   	  damage += (g_ambush_upgrade.integer * damage) / 2;
     }
-  } */
+  }
 
   client = targ->client;
 

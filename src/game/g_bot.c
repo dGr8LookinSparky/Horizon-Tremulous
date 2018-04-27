@@ -168,17 +168,17 @@ void G_BotCmd( gentity_t *master, int clientNum, char *command ) {
     bot->botCommand = BOT_IDLE;
     //trap_SendServerCommand(-1, "print \"idle mode\n\"");
     
-  } /*else if( !Q_stricmp( command, "attack" ) ) {
+  } else if( !Q_stricmp( command, "attack" ) ) {
 	  
     bot->botCommand = BOT_ATTACK;
     //trap_SendServerCommand(-1, "print \"attack mode\n\"");
     
-  } */else if( !Q_stricmp( command, "standground" ) ) {
+  } else if( !Q_stricmp( command, "standground" ) ) {
 	  
     bot->botCommand = BOT_STAND_GROUND;
     //trap_SendServerCommand(-1, "print \"stand ground mode\n\"");
     
-  }/* else if( !Q_stricmp( command, "defensive" ) ) {
+  } else if( !Q_stricmp( command, "defensive" ) ) {
 	  
     bot->botCommand = BOT_DEFENSIVE;
     //trap_SendServerCommand(-1, "print \"defensive mode\n\"");
@@ -189,7 +189,7 @@ void G_BotCmd( gentity_t *master, int clientNum, char *command ) {
     bot->botFriend = master;
     //trap_SendServerCommand(-1, "print \"follow-protect mode\n\"");
     
-  } */else if( !Q_stricmp( command, "followattack" ) ) {
+  } else if( !Q_stricmp( command, "followattack" ) ) {
 	  
     bot->botCommand = BOT_FOLLOW_FRIEND_ATTACK;
     bot->botFriend = master;
@@ -201,12 +201,12 @@ void G_BotCmd( gentity_t *master, int clientNum, char *command ) {
     bot->botFriend = master;
     //trap_SendServerCommand(-1, "print \"follow-idle mode\n\"");
     
-  } /*else if( !Q_stricmp( command, "teamkill" ) ) {
+  } else if( !Q_stricmp( command, "teamkill" ) ) {
 	  
     bot->botCommand = BOT_TEAM_KILLER;
     //trap_SendServerCommand(-1, "print \"team kill mode\n\"");
     
-  }*/ else {
+  } else {
 	
     bot->botCommand = BOT_REGULAR;
     //trap_SendServerCommand(-1, "print \"regular (unknown) mode\n\"");
@@ -489,8 +489,8 @@ void findnextpath( gentity_t *self )
 			srand( trap_Milliseconds( ) );
 			randnum = (int)(( (double)rand() / ((double)(RAND_MAX)+(double)(1)) ) * possiblenextpath);
 			nextpath = randnum;
-			//if(nextpath == possiblenextpath)
-			//{nextpath = possiblenextpath - 1;}
+			if(nextpath == possiblenextpath)
+			{nextpath = possiblenextpath - 1;}
 		}
 		self->lastpathid = self->targetPath;
 		self->targetPath = possiblepaths[nextpath];
@@ -1055,7 +1055,7 @@ void G_BotThink( gentity_t *self )
 		{
 			G_ForceWeaponChange( self, WP_BLASTER );
 		}
-		//G_Say( self, NULL, SAY_TEAM, "OMG I NEEDS AMMOH!!!");
+		G_Say( self, NULL, SAY_TEAM, "WHERE ARE MY BULLETS?!");
 	}
 	//Use medkit if low hp
 	if(self->client->ps.stats[ STAT_PTEAM ] == PTE_HUMANS && 
@@ -1292,13 +1292,13 @@ void G_BotThink( gentity_t *self )
 			
 			break;
 			
-		//case BOT_DEFENSIVE:
+		case BOT_DEFENSIVE:
 			// if there is an enemy around, rush them but not too far from where you are standing when given this command
-		//	break;
+			break;
 			
-		//case BOT_FOLLOW_FRIEND_PROTECT:
+		case BOT_FOLLOW_FRIEND_PROTECT:
 			// run towards friend, attack enemy
-		//	break;
+			break;
 			
 		case BOT_FOLLOW_FRIEND_ATTACK:
 			// run with friend until enemy spotted, then rush enemy
@@ -1434,8 +1434,8 @@ void G_BotThink( gentity_t *self )
 			
 			break;
 			
-		//case BOT_TEAM_KILLER: break; //We don't need this. 
-			/*
+		case BOT_TEAM_KILLER: //break; //We don't need this. 
+			
 			if(self->botEnemy) {
 				if(!botTargetInRange(self,self->botEnemy)) {
 					if(self->botEnemyLastSeen > clicksToStopChase) {
@@ -1470,7 +1470,7 @@ void G_BotThink( gentity_t *self )
 			}
 			
 			break;
-			*/
+			
 		default:
 			// dunno.
 			break;

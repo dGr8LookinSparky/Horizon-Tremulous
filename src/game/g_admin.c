@@ -5617,11 +5617,11 @@ qboolean G_admin_ambush_stage(gentity_t *ent,int skiparg)
 		return qfalse;
 	}
 	ADMP(va("^2Ambush Stage: ^5%d\n",g_ambush_stage.integer));
-	//ADMP(va("^2Ambush Upgrade Level: ^5%d\n",g_ambush_upgrade.integer));
+	ADMP(va("^2Ambush Upgrade Level: ^5%d\n",g_ambush_upgrade.integer));
 	return qtrue;
 }
 
-/* qboolean G_admin_ambush_donate(gentity_t *ent,int skiparg)
+qboolean G_admin_ambush_donate(gentity_t *ent,int skiparg)
 {
 	int minargc;
 	char donation[12];
@@ -5666,7 +5666,7 @@ qboolean G_admin_ambush_stage(gentity_t *ent,int skiparg)
 		trap_Cvar_Set( "g_ambush_upgrade", va( "%d", g_ambush_upgrade.integer + 1 ) );
 	}
 	return qtrue;
-} */
+}
 
 qboolean G_admin_denyjoin( gentity_t *ent, int skiparg )
 {

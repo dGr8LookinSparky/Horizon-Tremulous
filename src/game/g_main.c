@@ -195,8 +195,8 @@ vmCvar_t  g_buildMode;
 //ROTAX
 vmCvar_t  g_ambush;
 vmCvar_t  g_ambush_stage;
-//vmCvar_t  g_ambush_upgrade;
-//vmCvar_t  g_ambush_upgrade_cost;
+vmCvar_t  g_ambush_upgrade;
+vmCvar_t  g_ambush_upgrade_cost;
 vmCvar_t  g_ambush_killstonextstage;
 vmCvar_t  g_ambush_dodge;
 vmCvar_t  g_ambush_rebuild_time;
@@ -470,8 +470,8 @@ static cvarTable_t   gameCvarTable[ ] =
   { &g_abuild_dmg, "g_abuild_dmg", "1", CVAR_ARCHIVE, 0, qfalse  },
   { &g_hbuild_dmg, "g_hbuild_dmg", "1", CVAR_ARCHIVE, 0, qfalse  },
   { &g_ambush_range, "g_ambush_range", "5000", CVAR_ARCHIVE, 0, qfalse  },
-  //{ &g_ambush_upgrade, "g_ambush_upgrade", "0", CVAR_ARCHIVE, 0, qfalse  },
-  //{ &g_ambush_upgrade_cost, "g_ambush_upgrade_cost", "15000", CVAR_ARCHIVE, 0, qfalse  },
+  { &g_ambush_upgrade, "g_ambush_upgrade", "0", CVAR_ARCHIVE, 0, qfalse  },
+  { &g_ambush_upgrade_cost, "g_ambush_upgrade_cost", "15000", CVAR_ARCHIVE, 0, qfalse  },
   { &g_ambush_stage, "g_ambush_stage", "1", CVAR_ARCHIVE, 0, qfalse  },
   { &g_ambush, "g_ambush", "0", CVAR_SERVERINFO | CVAR_ARCHIVE, 0, qfalse  }
 };
@@ -983,7 +983,7 @@ void G_InitGame( int levelTime, int randomSeed, int restart )
 
   //ROTAX
   trap_Cvar_Set( "g_ambush_stage", "1" );
-  //trap_Cvar_Set( "g_ambush_upgrade", "0" );
+  trap_Cvar_Set( "g_ambush_upgrade", "0" );
   //trap_Cvar_Set( "g_friendlyFire", "1" );
   //trap_Cvar_Set( "g_friendlyFireAliens", "1" );
   level.boss = qfalse;
